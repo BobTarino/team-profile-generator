@@ -32,7 +32,7 @@ test("Can get name via getName()", () => {
 test("Can get id via getId()", () => {
   const testValue = 100;
   const e = new Employee("Andre", "test@test.com", testValue);
-  expect(e.getId()).toEqual(expect.any(Number));
+  expect(e.getId()).toBe(testValue);
 });
 
 test("Can get email via getEmail()", () => {
