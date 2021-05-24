@@ -5,16 +5,12 @@ const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
 
-const OUTPUT_DIR = path.resolve(__dirname, "output");
+const OUTPUT_DIR = path.resolve(__dirname, "dist");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 const teamMember = []
 const idArray = []
-
-
-// Write code to use inquirer to gather information about the development team members,
-// and to create objects for each team member (using the correct classes as blueprints!)
 
 
 function app(){
@@ -39,6 +35,7 @@ function app(){
                 message: 'What is your office number?',
                 name: 'managerofficenumber',
                 validate: response => {
+                    //used RegEx to specify search pattern
                     const pass = response.match(/^[1-9]\d*$/)
                     if(response) {
                         return true
@@ -58,6 +55,7 @@ function app(){
                 message: 'What is your managers email?',
                 name: 'manageremail',
                 validate: response => {
+                    //used RegEx to specify search pattern
                     const pass = response.match(/\S+@\S+\.\S+/)
                     if(response) {
                         return true
