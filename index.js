@@ -100,6 +100,8 @@ function app(){
             }
         })
     }
+
+
     function addEngineer(){
         inquirer.prompt([
             {
@@ -107,7 +109,7 @@ function app(){
                 message: 'What is your name?',
                 name: 'engineername',
                 validate: response => {
-                    if(response == "") {
+                    if (response == "") {
                         return "please enter at least one character"
                     }
                     else {
@@ -120,7 +122,7 @@ function app(){
                 message: 'What is your GitHub?',
                 name: 'engineergithub',
                 validate: response => {
-                    if(response == "") {
+                    if (response == "") {
                         return "please enter at least one character"
                     }
                     else {
@@ -139,7 +141,7 @@ function app(){
                 name: 'engineeremail',
                 validate: response => {
                     const pass = response.match(/\S+@\S+\.\S+/)
-                    if(response) {
+                    if (response) {
                         return true
                     }
                     else {
@@ -147,7 +149,7 @@ function app(){
                     }
                 }
             }
-        
+
         ]).then(responses => {
             const engineer = new Engineer(responses.engineername, responses.engineeremail, responses.engineerrid, responses.engineergithub)
             teamMember.push(engineer)
@@ -163,7 +165,7 @@ function app(){
                 message: 'What is your name?',
                 name: 'internname',
                 validate: response => {
-                    if(response == "") {
+                    if (response == "") {
                         return "please enter at least one character"
                     }
                     else {
@@ -176,7 +178,7 @@ function app(){
                 message: 'What is your school name?',
                 name: 'internschool',
                 validate: response => {
-                    if(response == "") {
+                    if (response == "") {
                         return "please enter at least one character"
                     }
                     else {
@@ -195,14 +197,14 @@ function app(){
                 name: 'internemail',
                 validate: response => {
                     const pass = response.match(/\S+@\S+\.\S+/)
-                    if(response) {
+                    if (response) {
                         return true
                     }
                     else {
                         return "please enter a valid email"
                     }
+                }
             }
-        }
 
         ]).then(responses => {
             const intern = new Intern(responses.internname, responses.internemail, responses.internid, responses.internschool)
