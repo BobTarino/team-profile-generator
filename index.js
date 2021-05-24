@@ -86,6 +86,7 @@ function app(){
 
         })
         .then(userSelection => {
+            // switch statement performs actions based on user conditions
             switch(userSelection.userchoice){
                 case 'Engineer':
                     addEngineer()
