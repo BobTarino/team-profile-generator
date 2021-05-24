@@ -152,7 +152,7 @@ function app(){
             }
 
         ]).then(responses => {
-            const engineer = new Engineer(responses.engineername, responses.engineeremail, responses.engineerrid, responses.engineergithub)
+            const engineer = new Engineer(responses.engineername, responses.engineeremail, responses.engineerid, responses.engineergithub)
             teamMember.push(engineer)
             idArray.push(responses.engineerid)
             createTeam()
